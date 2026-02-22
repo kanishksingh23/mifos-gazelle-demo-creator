@@ -6,7 +6,8 @@ GAZELLE_REPO_DIR = os.path.join(GAZELLE_ARTIFACTS_DIR, "mifos-gazelle")
 INI_OUTPUT_FILENAME = os.path.join(GAZELLE_ARTIFACTS_DIR, "mifos-gazelle-config.ini")
 GAZELLE_GIT_URL = "https://github.com/openMF/mifos-gazelle.git"
 GAZELLE_BRANCH_NAME = "dev"
-GAZELLE_DEPLOY_CMD_TMPL = ["sudo", "./run.sh", "-f", "{ini_path}"]
+GAZELLE_DEPLOY_CMD_TMPL = ["sudo", "./run.sh", "-f", "{ini_path}","-m",
+    "deploy", "-u", os.getenv("USER", "codespace")]
 
 # === deploy_logs_screen.py ===
 LOG_DISPLAY_LIMIT = 100
